@@ -70,8 +70,6 @@ const { y2mateA, y2mateV } = require('./lib/y2mate')
 
 hit_today = []
 banChats = true
-antitrol = true 
-bugc = true
 
 //***********»GAME«************\\
 let buriq = []
@@ -1377,6 +1375,13 @@ return reply('No Spam, Minimal 3 Detik Bro')
                   reply(`Penggunaan fitur antidelete :\n\n*${prefix}antidelete [aktif/mati]* (Untuk grup)\n*${prefix}antidelete [ctaktif/ctmati]* (untuk semua kontak)\n*${prefix}antidelete banct 628558xxxxxxx* (banlist kontak)`)
                }
 				break
+				case 'animesearch':
+                    query = args.join(" ")
+                    let halu = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}`)
+			let damte = await halu.json()
+			let { title, synopsis, source, episodes, type, score, status, url, image_url } = damte.results[0]
+			dha.sendFileFromUrl(from, image_url, 'h.jpg', `*Anime found!*\n\n*Title:* ${title}\n\n*Episode*: ${episodes}\n\n*Type*: ${type}\n\n*Status:* ${status? 'Ongoing' : 'Batch' }\n\n*Source:* ${source}\n\n*Synopsis:* ${synopsis}\n\n*URL*: ${url}`)
+			break
                   case "blowjob":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
    num = `${sender.split("@")[0]}@s.whatsapp.net`
@@ -1628,12 +1633,13 @@ break
             let li = await getBuffer(acak)
             await dha.sendMessage(from,li,image,{quoted: mek})
             break
-                    case 'mangasearch':
+                    case 'mangasearch': {
                     query = args.join(" ")
                     let ress = await fetch(`https://api.jikan.moe/v3/search/manga?q=${query}`)
 			let damta = await ress.json()
 			let { title, synopsis, chapters, publishing, start_date, volumes, url, rated, score, image_url } = damta.results[0]
-			dha.sendFileFromUrl(from, image_url, 'p.jpg', `*Manga found!*\n\n*Title:* ${title}\n\n*Chapters:* ${chapters}\n\n*Volumes:* ${volumes}\n\n*Public Or Private:* ${publishing}\n\n*Score:* ${score}\n\n*Rilis:* ${start_date}\n\n*Synopsis:* ${synopsis}\n\n*URL*: ${url}`, mek)
+			dha.sendFileFromUrl(from, image_url, 'halo.jpg', `*Manga found!*\n\n*Title:* ${title}\n\n*Chapters:* ${chapters}\n\n*Volumes:* ${volumes}\n\n*Public Or Private:* ${publishing}\n\n*Score:* ${score}\n\n*Rilis:* ${start_date}\n\n*Synopsis:* ${synopsis}\n\n*URL*: ${url}`, mek)
+			}
 			break
               case 'tebakbendera':{
                 if (!isGroup)return reply(mess.OnlyGrup)
@@ -4334,25 +4340,8 @@ break
   if (!isUrl(args[0]) && !args[0].includes('tiktok')) return reply('Link Error')
   ini_link = args[0]
   ayo = await getBuffer(`http://api.lolhuman.xyz/api/tiktokmusic?apikey=${setting.lolkey}&url=${ini_link}`)
-  await dha.sendMessage(from, ayo, audio, { mimetype: Mimetype.mp4Audio, filename: `Tiktok Music - By Riu.mp3`, quoted: mek })
+  await dha.sendMessage(from, ayo, audio, { mimetype: Mimetype.mp4Audio, filename: `${get_result.title}.mp3`, quoted: mek })
   break
-     case 'antibug':
-     if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
-          if (!mek.key.fromMe && !isOwner && !isCoOwner) return
-          if (args[0] === 'on') {
-          if (bugc === true) return
-          bugc = true
-          antitrol = true
-          reply('Berhasil menyalakan antibug')
-          } else if (args[0] === 'off') {
-          if (bugc === false) return
-          bugc = false
-          antitrol = false
-          reply('Berhasil mematikan antibug')
-          } else {
-          reply('Pilih on atau off')
-          }
-          break
     case 'google':
     if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
                     if (args.length == 0) return reply(`Example: ${prefix + command} loli kawaii`)
@@ -5083,34 +5072,6 @@ buttons = [{buttonId:`${prefix}prefixnofound`,buttonText:{displayText:'⋮☰ MA
 })
               break
                          
-              case 'animesearch':
-              if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
-                    if (args.length == 0) return reply(`Example: ${prefix + command} Gotoubun No Hanayome`)
-                    query = args.join(" ")
-                    get_result = await fetchJson(`https://api.lolhuman.xyz/api/anime?apikey=${setting.lolkey}&query=${query}`)
-                    get_result = get_result.result
-                    ini_txt = `Id : ${get_result.id}\n`
-                    ini_txt += `Id MAL : ${get_result.idMal}\n`
-                    ini_txt += `Judul : ${get_result.title.romaji}\n`
-                    ini_txt += `Episode : ${get_result.episodes}\n`
-                    ini_txt += `Durasi : ${get_result.duration} mins.\n`
-                    ini_txt += `Status : ${get_result.status}\n`
-                    ini_txt += `Season : ${get_result.season}\n`
-                    ini_txt += `Source : ${get_result.source}\n`
-                    ini_txt += `Awal Rilis : ${get_result.startDate.day} - ${get_result.startDate.month} - ${get_result.startDate.year}\n`
-                    ini_txt += `Akhir Rilis : ${get_result.endDate.day} - ${get_result.endDate.month} - ${get_result.endDate.year}\n`
-                    ini_txt += `Genre : ${get_result.genres.join(", ")}\n`
-                    ini_txt += `Synonyms : ${get_result.synonyms.join(", ")}\n`
-                    ini_txt += `Score : ${get_result.averageScore}%\n`
-                    ini_txt += `Characters : \n`
-                    ini_character = get_result.characters.nodes
-                    for (var x of ini_character) {
-                        ini_txt += `- ${x.name.full} (${x.name.native})\n`
-                    }
-                    ini_txt += `\nSinopsis : ${get_result.description}`
-                    thumbnail = await getBuffer(get_result.coverImage.large)
-                    await dha.sendMessage(from, thumbnail, image, { quoted: mek, caption: ini_txt })
-                    break
 //------------------< Ingfo Bot >-------------------
       case 'runtime':
               textImg(`${runtime(process.uptime())}`)
