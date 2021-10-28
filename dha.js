@@ -1380,7 +1380,7 @@ return reply('No Spam, Minimal 3 Detik Bro')
                     let halu = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}`)
 			let damte = await halu.json()
 			let { title, synopsis, source, episodes, type, score, status, url, image_url } = damte.results[0]
-			dha.sendFileFromUrl(from, image_url, 'h.jpg', `*Anime found!*\n\n*Title:* ${title}\n\n*Episode*: ${episodes}\n\n*Type*: ${type}\n\n*Status:* ${status? 'Ongoing' : 'Batch' }\n\n*Source:* ${source}\n\n*Synopsis:* ${synopsis}\n\n*URL*: ${url}`)
+			dha.sendFileFromUrl(from, image_url, 'h.jpg', `*Anime found!*\n\n📝 *Title:* ${title}\n\n🎬 *Episode*: ${episodes}\n\n🔎 *Type*: ${type}\n\n🗒 *Status:* ${status? 'Ongoing' : 'Batch' }\n\n📷 *Source:* ${source}\n\n📜 *Synopsis:* ${synopsis}\n\n📎 *URL*: ${url}`)
 			break
                   case "blowjob":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
@@ -1638,7 +1638,7 @@ break
                     let ress = await fetch(`https://api.jikan.moe/v3/search/manga?q=${query}`)
 			let damta = await ress.json()
 			let { title, synopsis, chapters, publishing, start_date, volumes, url, rated, score, image_url } = damta.results[0]
-			dha.sendFileFromUrl(from, image_url, 'halo.jpg', `*Manga found!*\n\n*Title:* ${title}\n\n*Chapters:* ${chapters}\n\n*Volumes:* ${volumes}\n\n*Public Or Private:* ${publishing}\n\n*Score:* ${score}\n\n*Rilis:* ${start_date}\n\n*Synopsis:* ${synopsis}\n\n*URL*: ${url}`, mek)
+			dha.sendFileFromUrl(from, image_url, 'halo.jpg', `*Manga found!*\n\n📝 *Title:* ${title}\n\n🎬 *Chapters:* ${chapters}\n\n🗒 *Volumes:* ${volumes}\n\n🔎 *Public Or Private:* ${publishing}\n\n🌟 *Score:* ${score}\n\n🌄 *Rilis:* ${start_date}\n\n📜 *Synopsis:* ${synopsis}\n\n📎 *URL*: ${url}`)
 			}
 			break
               case 'tebakbendera':{
@@ -1676,7 +1676,7 @@ break
                sendKontak(from, `${owner}`, `${ownerName}`, 'Sibukk!!')
                await sleep(1000)
                txtt =`Hai Kak ${pushname}`
-               buttons = [{buttonId: `${prefix}creator`,buttonText:{displayText: 'CREATOR'},type:1},{buttonId:`${prefix}infoig`,buttonText:{displayText:'INSTAGRAM'},type:1}]
+               buttons = [{buttonId: `${prefix}partner`,buttonText:{displayText: 'CREATOR'},type:1},{buttonId:`${prefix}infoig`,buttonText:{displayText:'INSTAGRAM'},type:1}]
                buttonsMessage = { contentText: `${txtt}`, footerText: 'Butuh Info Apa Dari Ownerku?', buttons: buttons, headerType: 1 }
                prep = await dha.prepareMessageFromContent(from,{buttonsMessage}, { quoted: freply })
                dha.relayWAMessage(prep)
@@ -2327,6 +2327,7 @@ Info : Meng Tag Member Melalui Audio, Image Dan Video Di Grup.
 - !totalall
 - !ratting
 - !source
+- !donasi
 ───────────────
 
 *𝗘𝗡𝗗☹︎*
@@ -3275,20 +3276,20 @@ reply(`Terima kasih Atas Skornya Kak, Kami Harap Kamu Dapat Menikmati Bot Dengan
 break
 case 'partner':
 if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
-hard = `Ini Kak Kontak Partner Saya 😇`
+hard = `Ini Kak Kontak Temen - Temen Saya 😇`
              let ini_list = []
    {
   ini_list.push({
-            "displayName": 'Rio ( Gay )',
-            "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:Rio\nitem1.TEL;waid=6285664770042:6285664770042\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+            "displayName": 'Rio Fernanda',
+            "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:Rio Fernanda\nitem1.TEL;waid=6285664770042:6285664770042\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
           },
 {
-            "displayName": 'Hafiz ( Temen Gay😍 )',
-            "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:Hafiz\nitem1.TEL;waid=79659304176:+79659304176\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+            "displayName": 'Hafiz Al Ghifari',
+            "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:Hafiz Chan\nitem1.TEL;waid=79659304176:+79659304176\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
           },
 {
-            "displayName": 'Lolhuman ( My Mastah )',
-            "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:Lolhuman(2nd Number)\nitem1.TEL;waid=62895418200111:62895418200111\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
+            "displayName": 'Lolhuman',
+            "vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:Lolhuman\nitem1.TEL;waid=62895418200111:62895418200111\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
           }
           )
   }
@@ -3296,7 +3297,7 @@ hard = `Ini Kak Kontak Partner Saya 😇`
         "displayName": `100 kontak`,
         "contacts": ini_list
         }, 'contactsArrayMessage', { quoted: mek })
-        reply(hard)
+        dha.sendMessage(from, `${hard}`, MessageType.text)
         break
 					case 'jadian':
 					if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
@@ -3607,8 +3608,8 @@ break
                         const { dl_link, thumb, title, filesizeF, filesize } = res
                         axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
                         .then(async (a) => {
-                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*PLAY VIDEO*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam devtuk link_`)
-                        const captions = `*PLAY VIDEO*\n\n*Title* : ${title}\n*Ext* : MP4\n*Size* : ${filesizeF}\n*Link* : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
+                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*PLAY VIDEO*\n\n📝 *Title* : ${title}\n🎥 *Type* : MP3\n✨ *Size* : ${filesizeF}\n📎 *Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam bentuk link_`)
+                        const captions = `*PLAY VIDEO*\n\n📝 *Title* : ${title}\n🎥 *Type* : MP4\n✨ *Size* : ${filesizeF}\n📎 *Link* : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         sendMediaURL(from, thumb, captions)
                         await sendMediaURL(from, dl_link).catch(() => reply('error'))
                         })                
@@ -4216,29 +4217,6 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
              pdf = await getBuffer(data.result)
              dha.sendMessage(from, pdf, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${get_result.result.title_romaji}.pdf`, thumbnail: ini_image })
              break
-             case 'py1':
-             if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
-			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
-            var srch = args.join('')
-    		aramas = await yts(srch);
-    		aramat = aramas.all 
-   			var mulaikah = aramat[0].url							
-                  try {
-                    yta(mulaikah)
-                    .then((res) => {
-                        const { dl_link, thumb, title, filesizeF, filesize } = res
-                        axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
-                        .then(async (a) => {
-                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam devtuk link_`)
-                        const captions = `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Size* : ${filesizeF}\n*Link* : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
-                        sendMediaURL(from, thumb, captions)
-                        await sendMediaURL(from, dl_link).catch(() => reply('error'))
-                        })                
-                        })
-                        } catch (err) {
-                        reply(mess.error.api)
-                        }
-                   break  
                    case 'py2':
                    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
@@ -4252,8 +4230,8 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
                         const { dl_link, thumb, title, filesizeF, filesize } = res
                         axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
                         .then(async (a) => {
-                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Filesize* : ${filesizeF}\n*Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam devtuk link_`)
-                        const captions = `*PLAY MUSIC*\n\n*Title* : ${title}\n*Ext* : MP3\n*Size* : ${filesizeF}\n*Link* : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
+                        if (Number(filesize) >= 100000) return sendMediaURL(from, thumb, `*PLAY MUSIC*\n\n📝 *Title* : ${title}\n🎶 *Type* : MP4\n✨ *Size* : ${filesizeF}\n📎 *Link* : ${a.data}\n\n_Untuk durasi lebih dari batas disajikan dalam bentuk link_`)
+                        const captions = `*PLAY MUSIC*\n\n📝 *Title* : ${title}\n🎶 *Type* : MP3\n✨ *Size* : ${filesizeF}\n📎 *Link* : ${a.data}\n\n_Silahkan tunggu file media sedang dikirim mungkin butuh beberapa menit_`
                         sendMediaURL(from, thumb, captions)
                         await sendMediaURL(from, dl_link).catch(() => reply('error'))
                         })                
@@ -4279,13 +4257,15 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
 			 res = await yts(q)
 			   let thumbInfo = ` 
 *Youtube Download*
- *Judul :* ${res.all[0].title}
- *ID Video :* ${res.all[0].videoId}
- *Diupload Pada :* ${res.all[0].ago}
- *Views :* ${res.all[0].views}
- *Durasi :* ${res.all[0].timestamp}
- *Channel :* ${res.all[0].author.name}
-*Link Channel :* ${res.all[0].author.url}
+
+
+*📝 Judul :* ${res.all[0].title}
+*✍️ ID Video :* ${res.all[0].videoId}
+*⏲️ Upload :* ${res.all[0].ago}
+*👁 Views :* ${res.all[0].views}
+*✨ Durasi :* ${res.all[0].timestamp}
+*👤 Channel :* ${res.all[0].author.name}
+*📎 Link Channel :* ${res.all[0].author.url}
 
 *Silahkan pilih media yang akan di download*
 `
@@ -5634,8 +5614,29 @@ Sanksi: *PERMANENT BLOCK*
 
 Jika sudah dipahami rules-nya, silakan ketik *menu* untuk memulai!`
               dha.sendMessage(from, miku, image, {quoted: fkontak, contextInfo: { forwardingScore: 508, isForwarded: true}, caption: syarat })
+              break
+              case 'donasi':
+              kontol = `
+🌟 *D O N A S I* 🌟
+
+----------------------------------
+You: Apasi Keuntungan Donasi Untuk Bot?
+
+Me: Dengan Adanya Kamu Donasi, Bot Bisa Memberikan Pelayanan Yang Terbaik
+
+You: Terus, Apa Saja Pelayanan Terbaiknya?
+
+Me: Seperti Fitur Bot No Eror 100%, Gk Lemot Karna Server Baru Yang Dari Uang Donasi Kamu.
+----------------------------------
+
+Pulsa Indosat: 081462239208
+Trakteer: https://trakteer.id/ryuubotz_
+Saweria: https://saweria.co/ryuubotz
+`
+dha.sendMessage(from, `${kontol}`, MessageType.text, {quoted: mek})
+break
        case 'infoig':
-              reply(`IG: Fanzz_666`)
+              dha.sendMessage(from, `Instagram Ownerku\nhttps://www.instagram.com/riuganz_`, MessageType.text, {quoted: mek})
               break
 default:
 if (budy.includes("https://youtu.be")) {
