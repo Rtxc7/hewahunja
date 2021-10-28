@@ -1840,7 +1840,7 @@ break
       markzuberg = "0@s.whatsapp.net"
     ow = "62814622392081@s.whatsapp.net"
      let p2 = await dha.getStatus(num)
-     let p3 = `${p2? `${p2.status}` : '-'}`
+     let p3 = `${p2? `${p2.status}` : 'Tidak Terdeteksi'}`
      let ppmenu = fs.readFileSync('./lib/menu.js');
 jsonData = JSON.parse(ppmenu);
 randIndex = Math.floor(Math.random() * jsonData.length);
@@ -1986,7 +1986,7 @@ Info : Mencari Hand Phone Yang Kamu Cari.
 ───────────────
 
 ───────────────
-*𝑪𝑴𝑫 𝑺𝑬𝑺𝑺𝑰𝑶𝑵* [ 🏳️ ]
+*𝑪𝑴𝑫 𝑺𝑬𝑺𝑺𝑰𝑶𝑵* [ 💎 ]
 
 - Jadi Bot
 Penggunaan : Ketik [ !jadibot ]
@@ -2321,6 +2321,14 @@ Info : Meng Tag Member Melalui Audio, Image Dan Video Di Grup.
 - !listnsfw
 ───────────────
 
+───────────────
+*𝘾𝙈𝘿 𝙊𝙏𝙃𝙀𝙍* [ 💬 ]
+
+- !totalall
+- !ratting
+- !source
+───────────────
+
 *𝗘𝗡𝗗☹︎*
 
 *Note* : Tidak Semua Fitur Bot Work, Sebagian Eror Karna Terbatasan Scraper.
@@ -2527,34 +2535,11 @@ buttons = [{buttonId:`${prefix}quotesanime`,buttonText:{displayText:'Try Again'}
               dha.relayWAMessage(prep)
               gameAdd(sender, glimit)
 break
-case 'sticker2':
-                    if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
-                        const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
-                        filePath = await dha.downloadAndSaveMediaMessage(encmedia)
-                        file_name = getRandom('.webp')
-                        request({
-                            url: `https://api.lolhuman.xyz/api/convert/towebp?apikey=PunyaIkyAds`,
-                            method: 'POST',
-                            formData: {
-                                "img": fs.createReadStream(filePath)
-                            },
-                            encoding: "binary"
-                        }, function(error, response, body) {
-                            fs.unlinkSync(filePath)
-                            fs.writeFileSync(file_name, body, "binary")
-                            ini_buff = fs.readFileSync(file_name)
-                            dha.sendMessage(from, ini_buff, sticker, { quoted: mek }).then(() => {
-                                fs.unlinkSync(file_name)
-                            })
-                        });
-                    } else {
-                        reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim`)
-                    }
-                    break
                 break
                 case 'jualanikannya':
                     sil = [`50k`,`160k`,`600k`,`10k`,`10k`,`10k`,`30k`,`20k`,`20k`,`40k`,`12k`,`40k`,`15k`,`15k`,`10k`,`40k`,`50k`,`10k`]
 				ha = sil[Math.floor(Math.random() * sil.length)]
+				var htgm2 = randomNomor(5000)
                 spasi = `─────────────────`
                 yoks = `\n${spasi}\n💲U A N G : ${ha}\nMantap Pak ${pushname} Terimakasih Atas Ikannya\n${spasi}`
                 buttons = [{buttonId:`${prefix}mancing`,buttonText:{displayText:'MANCING🎣'},type:1}]
@@ -2562,6 +2547,8 @@ case 'sticker2':
               buttonsMessage = {footerText:`${yoks}`, imageMessage: imageMsg,
               contentText:`*JUALAN*`,buttons,headerType:4}
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
+              var htgm2 = randomNomor(5000)
+              addBalance(sender, htgm2, balance)
               dha.relayWAMessage(prep)
                 break
 				case 'berburu':
@@ -2581,13 +2568,17 @@ case 'sticker2':
                 var ini = buru.indexOf(from)
                 buru.splice(from)
                 fs.writeFileSync('./database/buru.json', JSON.stringify(buru))
+                var htgm2 = randomNomor(5000)
                 end = `Permainan Telah Berakhir`
                 sendButLocation(from, `${end}`, `END`, {jpegThumbnail: miku}, [{buttonId:`${prefix}berburu`,buttonText:{displayText:'⚔️BERBURU⚔️'},type:1}])
+              addBalance(sender, htgm2, balance)
                 break
                 case 'nilaiburu':
                 var nilai = Math.ceil(Math.random() * 10)
-                nilainya = `*NILAI KAMU*\n nilai : ${nilai}`
+                var htgm2 = randomNomor(5000)
+                nilainya = `*NILAI KAMU*\n nilai : ${nilai}\nNote:\nNilai = Balance`
                 sendButLocation(from, `${nilainya}`, `END`, {jpegThumbnail: miku}, [{buttonId:`${prefix}help`,buttonText:{displayText:'HOME'},type:1}])
+               addBalance(sender, htgm2, balance)
                 break
                //------------------< Anti Link Menu >-------------------
                case 'antilink':
@@ -2916,10 +2907,10 @@ game.addmtk(from, anih, gamewaktu, mtk)
 	}
 break
 
-					case 'saus':
-					if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
-					sour = `Nih Scnya\n https://www.mediafire.com/download/eajki98w6tbmep3`
+					case 'source':{
+					sour = `Bot Ini Menggunakan Sc\nhttps://github.com/ItsMeHafz/base-selfbot`
 					fakegroup(sour)
+					}
 					break
                     case 'truth':
                     if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
@@ -3649,12 +3640,12 @@ break
 		dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, hayuk, MessageType.text, {quoted: mek})
 			dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, yahaha, audio, {quoted: mek, ptt: true})
 			break
-              case 'imut':
+			case 'imut':
 				if (!isQuotedAudio) return reply('Tag audio/vn nya!')
 					iniencmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					inimedia = await dha.downloadAndSaveMediaMessage(iniencmedia)
 					ran = getRandom('.mp3')
-					exec(`ffmpeg -i ${inimedia} -af atempo=4/3,asetrate=44500*3/4 ${ran}`, (err, stderr, stdout) => {
+					exec(`ffmpeg -i ${inimedia} -af atempo=3/4,asetrate=44500*4/3 ${ran}`, (err, stderr, stdout) => {
 						fs.unlinkSync(inimedia)
 						if (err) return reply('Error!')
 						hah = fs.readFileSync(ran)
