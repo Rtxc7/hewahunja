@@ -4910,7 +4910,7 @@ break
             fs.unlinkSync(ran)
             })
             break
-       case 'sticker':
+            case 'sticker':
        case 'stiker':
        case 's':
        case 'stickergif':
@@ -4924,7 +4924,7 @@ break
               exec(`ffmpeg -i ${mediat} -vf "scale=512:512:force_original_aspect_ratio=increase,fps=15, crop=512:512" ${ron}`, (err) => {
               fs.unlinkSync(mediat)
               if (err) return reply(`${err}`)
-              exec(`webpmux -set exif ${addMetadata('Sticker Pack By Riu')} ${ron} -o ${ron}`, async (error) => {
+              exec(`webpmux -set exif ${addMetadata('WA')} ${ron} -o ${ron}`, async (error) => {
               if (error) return reply(`${error}`)
               dha.sendMessage(from, fs.readFileSync(ron), sticker, {quoted:mek})
               fs.unlinkSync(ron)
@@ -4937,7 +4937,7 @@ break
               exec(`ffmpeg -i ${mediat} -vf "scale=512:512:force_original_aspect_ratio=increase,fps=15, crop=512:512" ${ron}`, (err) => {
               fs.unlinkSync(mediat)
               if (err) return reply(`${err}`)
-              exec(`webpmux -set exif ${addMetadata('Sticker Pack By Riu')} ${ron} -o ${ron}`, async (error) => {
+              exec(`webpmux -set exif ${addMetadata('WA')} ${ron} -o ${ron}`, async (error) => {
               if (error) return reply(`${error}`)
               dha.sendMessage(from, fs.readFileSync(ron), sticker, {quoted:mek})
               fs.unlinkSync(ron)
