@@ -707,7 +707,7 @@ async function sendFileFromUrl(from, url, caption, miku, mek, men) {
           let authorname = dha.contacts[from] != undefined ? dha.contacts[from].vname || dha.contacts[from].notify : undefined	
           if (authorname != undefined) { } else { authorname = groupName }	
           function addMetadata(packname, author) {	
-          if (!packname) packname = 'Ryuu'; if (!author) author = '';author = author.replace(/[^a-zA-Z0-9]/g, '');	
+          if (!packname) packname = 'Ryuu'; if (!author) author = '.';author = author.replace(/[^a-zA-Z0-9]/g, '');	
           let name = `${author}_${packname}`
           if (fs.existsSync(`./sticker/${name}.exif`)) return `./sticker/${name}.exif`
           const json = {	
