@@ -707,7 +707,7 @@ async function sendFileFromUrl(from, url, caption, miku, mek, men) {
           let authorname = dha.contacts[from] != undefined ? dha.contacts[from].vname || dha.contacts[from].notify : undefined	
           if (authorname != undefined) { } else { authorname = groupName }	
           function addMetadata(packname, author) {	
-          if (!packname) packname = 'Ryuu'; if (!author) author = 'Bot';author = author.replace(/[^a-zA-Z0-9]/g, '');	
+          if (!packname) packname = 'Ryuu'; if (!author) author = '';author = author.replace(/[^a-zA-Z0-9]/g, '');	
           let name = `${author}_${packname}`
           if (fs.existsSync(`./sticker/${name}.exif`)) return `./sticker/${name}.exif`
           const json = {	
@@ -4922,7 +4922,7 @@ break
               exec(`ffmpeg -i ${mediat} -vf "scale=512:512:force_original_aspect_ratio=increase,fps=15, crop=512:512" ${ron}`, (err) => {
               fs.unlinkSync(mediat)
               if (err) return reply(`${err}`)
-              exec(`webpmux -set exif ${addMetadata('WA')} ${ron} -o ${ron}`, async (error) => {
+              exec(`webpmux -set exif ${addMetadata('Sticker Pack By Ryuu Botz')} ${ron} -o ${ron}`, async (error) => {
               if (error) return reply(`${error}`)
               dha.sendMessage(from, fs.readFileSync(ron), sticker, {quoted:mek})
               fs.unlinkSync(ron)
