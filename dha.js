@@ -707,7 +707,7 @@ async function sendFileFromUrl(from, url, caption, miku, mek, men) {
           let authorname = dha.contacts[from] != undefined ? dha.contacts[from].vname || dha.contacts[from].notify : undefined	
           if (authorname != undefined) { } else { authorname = groupName }	
           function addMetadata(packname, author) {	
-          if (!packname) packname = 'WABot'; if (!author) author = 'Bot';author = author.replace(/[^a-zA-Z0-9]/g, '');	
+          if (!packname) packname = 'Ryuu'; if (!author) author = 'Bot';author = author.replace(/[^a-zA-Z0-9]/g, '');	
           let name = `${author}_${packname}`
           if (fs.existsSync(`./sticker/${name}.exif`)) return `./sticker/${name}.exif`
           const json = {	
@@ -2168,7 +2168,7 @@ Penggunaan : Ketik [ !imut ]
 Info : Mengubah Music Jadi Suara Loli
 
 - Reverse Music
-Penggunaan : Ketik [ !balik ]
+Penggunaan : Ketik [ !balikmp3 ]
 Info : Membalik Music.
 
 - To Audio
@@ -2180,7 +2180,7 @@ Info : Mengubah Vidio Menjadi Audio.
 *𝘾𝙈𝘿 𝙑𝙄𝘿𝙀𝙊* [ 🎥 ]
 
 - Reverse Video
-Penggunaan : Ketik [ !reversevideo ]
+Penggunaan : Ketik [ !balikmp4 ]
 Info : Membalik Video
 ───────────────
 
@@ -3487,7 +3487,7 @@ hard = `Ini Kak Kontak Temen - Temen Saya 😇`
               reply(`${err}`)
 })
               break
-            case 'reversevideo':
+            case 'balikmp4':
             if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
             if (!isQuotedVideo) return reply('Reply videonya!')
             encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
@@ -3507,19 +3507,6 @@ let qse = dha.serializeM(await m.getQuotedObj())
 if (!qse.quoted) return reply('the message you replied does not contain a reply!')
 await qse.quoted.copyNForward(m.chat, true)
 break
-            case 'reverseaudio':
-            if (!isQuotedAudio) return reply('Reply videonya!')
-            encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-            media = await dha.downloadAndSaveMediaMessage(encmedia)
-            ran = getRandom('.mp3')
-            exec(`ffmpeg -i ${media} -vf reverse -af areverse ${ran}`, (err) => {
-            fs.unlinkSync(media)
-            if (err) return reply(`Err: ${err}`)
-            buffer453 = fs.readFileSync(ran)
-            dha.sendMessage(from,  audio, { mimetype: 'audio/mp3', quoted: mek })
-            fs.unlinkSync(ran)
-            })
-            break
     case 'pilihan2':
     if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
             replyFake(mess.wait)
@@ -3756,6 +3743,7 @@ break
           	uptime = process.uptime()
           	banChats = true
           	fakegroup(`「 *SELF-MODE* 」`)
+              await dha.setStatus(`Bot For WhatsApp | | Status : Offline`)
           	break
 //------------------< Downloader/Search/Anime >-------------------
 case 'clearall':{
@@ -4085,7 +4073,7 @@ name: nama,
 address: impostor,
 jpegThumbnail: miku}, MessageType.liveLocation, {quoted:floc})
 break
-					case 'balik':
+					case 'balikmp3':
 	encmediau = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 	mediau = await dha.downloadAndSaveMediaMessage(encmediau)
 	ran = getRandom('.mp3')
@@ -4933,8 +4921,12 @@ break
               ron = getRandom('.webp')
               exec(`ffmpeg -i ${mediat} -vf "scale=512:512:force_original_aspect_ratio=increase,fps=15, crop=512:512" ${ron}`, (err) => {
               fs.unlinkSync(mediat)
+              if (err) return reply(`${err}`)
+              exec(`webpmux -set exif ${addMetadata('WA')} ${ron} -o ${ron}`, async (error) => {
+              if (error) return reply(`${error}`)
               dha.sendMessage(from, fs.readFileSync(ron), sticker, {quoted:mek})
               fs.unlinkSync(ron)
+})
 })
               } else if ((isMedia && mek.message.videoMessage.seconds < 11 || isQuotedVideo && mek.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
               encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
@@ -4942,8 +4934,12 @@ break
               ron = getRandom('.webp')
               exec(`ffmpeg -i ${mediat} -vf "scale=512:512:force_original_aspect_ratio=increase,fps=15, crop=512:512" ${ron}`, (err) => {
               fs.unlinkSync(mediat)
+              if (err) return reply(`${err}`)
+              exec(`webpmux -set exif ${addMetadata('WA')} ${ron} -o ${ron}`, async (error) => {
+              if (error) return reply(`${error}`)
               dha.sendMessage(from, fs.readFileSync(ron), sticker, {quoted:mek})
               fs.unlinkSync(ron)
+})
 })
               } else {
               reply(`Kirim gambar dengan caption ${prefix}sticker\nDurasi Sticker Video 1-9 Detik`)
