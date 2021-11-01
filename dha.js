@@ -70,6 +70,8 @@ const { y2mateA, y2mateV } = require('./lib/y2mate')
 
 hit_today = []
 banChats = true
+let namo = ''
+let ator = ''
 
 //***********»GAME«************\\
 let buriq = []
@@ -707,15 +709,15 @@ async function sendFileFromUrl(from, url, caption, miku, mek, men) {
           let authorname = dha.contacts[from] != undefined ? dha.contacts[from].vname || dha.contacts[from].notify : undefined	
           if (authorname != undefined) { } else { authorname = groupName }	
           function addMetadata(packname, author) {	
-          if (!packname) packname = 'Ryuu'; if (!author) author = '.';author = author.replace(/[^a-zA-Z0-9]/g, '');	
+          if (!packname) packname = 'WABot'; if (!author) author = 'Bot';author = author.replace(/[^a-zA-Z0-9]/g, '');	
           let name = `${author}_${packname}`
           if (fs.existsSync(`./sticker/${name}.exif`)) return `./sticker/${name}.exif`
           const json = {	
          "sticker-pack-name": packname,
          "sticker-pack-publisher": author,
 }
-         const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
-         const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
+	const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
+	const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
          let len = JSON.stringify(json).length	
          let last	
          if (len > 256) {	
@@ -4922,7 +4924,7 @@ break
               exec(`ffmpeg -i ${mediat} -vf "scale=512:512:force_original_aspect_ratio=increase,fps=15, crop=512:512" ${ron}`, (err) => {
               fs.unlinkSync(mediat)
               if (err) return reply(`${err}`)
-              exec(`webpmux -set exif ${addMetadata('Sticker Pack By Ryuu Botz')} ${ron} -o ${ron}`, async (error) => {
+              exec(`webpmux -set exif ${addMetadata('Sticker Pack By Riu')} ${ron} -o ${ron}`, async (error) => {
               if (error) return reply(`${error}`)
               dha.sendMessage(from, fs.readFileSync(ron), sticker, {quoted:mek})
               fs.unlinkSync(ron)
@@ -4935,7 +4937,7 @@ break
               exec(`ffmpeg -i ${mediat} -vf "scale=512:512:force_original_aspect_ratio=increase,fps=15, crop=512:512" ${ron}`, (err) => {
               fs.unlinkSync(mediat)
               if (err) return reply(`${err}`)
-              exec(`webpmux -set exif ${addMetadata('WA')} ${ron} -o ${ron}`, async (error) => {
+              exec(`webpmux -set exif ${addMetadata('Sticker Pack By Riu')} ${ron} -o ${ron}`, async (error) => {
               if (error) return reply(`${error}`)
               dha.sendMessage(from, fs.readFileSync(ron), sticker, {quoted:mek})
               fs.unlinkSync(ron)
