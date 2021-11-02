@@ -37,7 +37,7 @@ nocache('./dha.js', module => console.log(`${module} is now updated!`))
 
 const starts = async (dha = new WAConnection()) => {
     dha.logger.level = 'warn'
-    dha.version = [2, 2119, 6] 
+    dha.version = [2, 2140, 12] 
     console.log(banner.string)
     dha.on('qr', () => {
         console.log(color('[','white'), color('!','red'), color(']','white'), color(' Now scan the qr -', 'white'), color('( • )'), color("- Copyright From Riu", 'red'))
