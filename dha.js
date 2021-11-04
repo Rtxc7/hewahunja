@@ -41,6 +41,7 @@ const os = require('os');
 const { validmove, setGame } = require("./lib/tictactoe");
 const voting = JSON.parse(fs.readFileSync('./lib/voting.json'))
 const { addVote, delVote } = require('./lib/vote')
+const { jadibot, stopjadibot, listjadibot } = require('./lib/jadibot')
 const { addBadword, delBadword, isKasar, addCountKasar, isCountKasar, delCountKasar } = require("./lib/badword");
 const { yta, ytv, igdl, upload, formatDate } = require('./lib/ytdl')
 const hx = require('hxz-api')
@@ -383,6 +384,9 @@ return Math.floor(angka)
       );
       dha.sendMessage(target, teks, "conversation");
     };
+    
+    
+    
     //  Ucapan
     
 
@@ -1502,6 +1506,38 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
             }
                 break
      
+     
+ //*********************(( JADI BOT ))*************\\
+ case 'jadibot':
+if(itsMe) return reply('Tidak bisa jadibot di dalam bot')
+if (isGroup) return reply(`*Fitur Hanya dapat digunakan dalam Private Chat! => wa.me/${botN}?text=${prefix}jadibot*`)
+jadibot(reply,dha,from, mek)
+break
+    
+case 'stopjadibot':
+if(!itsMe && !isOwner)return reply('tidak bisa stopjadibot kecuali owner')
+stopjadibot(reply)
+break
+    
+case 'listbot':
+case 'listjadibot':
+case 'listjadibotz':
+let tekss = 'L I S T B O T \n\n'
+let lbt = [];
+for(let i of listjadibot) {
+lbt.push(i.jid)
+tekss += `
+N a m a : ${i.name}
+
+T a g : @${i.jid.split('@')[0]}
+
+D e v i c e: ${i.phone.device_manufacturer}
+
+M o d e l : ${i.phone.device_model}\n\n`
+}
+mentions(monospace(tekss), lbt, true)
+break
+//************************************************\\
                 
 //********************(( PREMI ))******************\\
                 case 'addprem':
@@ -3586,6 +3622,7 @@ break
               break
               case 'py1':
               if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+              if (!isPremium && !isOwner) return reply("Khusus Premium!")
             if (args.length === 0) return reply(`Kirim perintah *${prefix}video* _Judul lagu yang akan dicari_`)
             var srch = args.join('')
             aramas = await yts(srch);
@@ -3856,6 +3893,7 @@ break
        case 'igdl':
        case 'instagram':
               try {
+              	if (!isPremium && !isOwner) return reply("Khusus Premium!")
               if (!isUrl(q)) return reply('Linknya?')
               if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
               res = await axios.get(`https://api.lolhuman.xyz/api/instagram2?apikey=${setting.lolkey}&url=${args[0]}`)
@@ -3964,6 +4002,7 @@ break
             }
             break
 case 'tiktokdl':
+if (!isPremium && !isOwner) return reply("Khusus Premium!")
 if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
               if (!q) return reply('Linknya?')
               if (!q.includes('tiktok')) return reply(mess.error.Iv)
@@ -4176,6 +4215,7 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
              reply('Error Gagal Dalam Memasuki Web Y2mate_')
 })
            case 'youtubedl':
+           if (!isPremium && !isOwner) return reply("Khusus Premium!")
       if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
              if (args.length < 1) return reply('Link Nya Mana?')
              if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
@@ -4199,6 +4239,7 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
               break
        case 'nhentaipdf':
        case 'nhdl':
+       if (!isPremium && !isOwner) return reply("Khusus Premium!")
        if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
              if (!q) return reply('kodenya?')
              get_result = await fetchJson(`https://api.lolhuman.xyz/api/nhentai/${q}?apikey=${setting.lolkey}`)
@@ -4207,8 +4248,19 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
              pdf = await getBuffer(data.result)
              dha.sendMessage(from, pdf, document, { quoted: mek, mimetype: Mimetype.pdf, filename: `${get_result.result.title_romaji}.pdf`, thumbnail: ini_image })
              break
+             case 'bokep': 
+             case 'bkp': 
+             case 'randombokep':
+             if (!isPremium && !isOwner) return reply("Khusus Premium!")
+                fetchJson(`https://pastebin.com/raw/k82VJzeP`).then((data) => {
+                    var bokepp = JSON.parse(JSON.stringify(data))
+                    var bokep2 =  bokepp[Math.floor(Math.random() * bokepp.length)]
+                    textImg(bokep2.teks)
+                })
+                break
                    case 'py2':
                    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+                   if (!isPremium && !isOwner) return reply("Khusus Premium!")
 			if (args.length === 0) return reply(`Kirim perintah *${prefix}play* _Judul lagu yang akan dicari_`)
             var srch = args.join('')
     		aramas = await yts(srch);
@@ -4232,6 +4284,7 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
                    break  
                    case 'buttons1':
                    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+                   if (!isPremium && !isOwner) return reply("Khusus Premium!")
                     if (args.length == 0) return reply(`Contoh: ${prefix + command} https://www.youtube.com/watch?v=qZIQAk-BUEc`)
                     ini_link = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/ytaudio2?apikey=${setting.lolkey}&url=${ini_link}`)
@@ -4271,6 +4324,7 @@ dha.relayWAMessage(prep)
 break
      case 'buttons2':
      if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+     if (!isPremium && !isOwner) return reply("Khusus Premium!")
                     if (args.length == 0) return reply(`Example: ${prefix + command} https://www.youtube.com/watch?v=qZIQAk-BUEc`)
                     ini_link = args[0]
                     get_result = await fetchJson(`https://api.lolhuman.xyz/api/ytvideo2?apikey=${setting.lolkey}&url=${ini_link}`)
