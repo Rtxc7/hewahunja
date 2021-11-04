@@ -1899,473 +1899,466 @@ Your Api : wa.me/${sender.split("@")[0]}
 ───────────────
 *𝘾𝙈𝘿 𝙎𝙏𝙄𝘾𝙆𝙀𝙍* [ 📰 ]
 
-- Emoji
-Penggunaan : Ketik [ !emoji wa 😎] 
+-📰 Emoji
+Penggunaan : !emoji wa 😎
 Info : Untuk Melakukan Emoji Ke Sticker.
 
-- List Emoji
-Penggunaan : Ketik [ !emojilist ] 
+-📰 List Emoji
+Penggunaan : !emojilist
 Info : Untuk Melihat List Emoji Apa Saja Yang Bisa Ke Ubah.
 
-- Attp
-Penggunaan : Ketik [ !attp Halo ] 
+-📰 Attp
+Penggunaan : !attp Halo 
 Info : Untuk Mengubah Kata Kata Menjadi Sticker Kelap Kelip, Tidak Termasuk Emoji!.
 
-- Sticker
-Penggunaan : Ketik [ !sticker ] 
+-📰 Sticker
+Penggunaan : !sticker
 Info : Untuk Mengubah Image Dan Vidio Menjadi Sticker.
 
-- Toimg
-Penggunaan : Ketik [ !toimg ] 
+-📰 Toimg
+Penggunaan : !toimg
 Info : Untuk Mengubah Sticker Menjadi Image.
 
-- Tovideo
-Penggunaan : Ketik [ !tovideo ] 
+-📰 Tovideo
+Penggunaan : !tovideo
 Info : Untuk Mengubah Sticker Bergerak Menjadi Vidio.
 
-- Telesticker
-Penggunaan : Ketik [ !telesticker link ]
+-📰 Telesticker
+Penggunaan : !telesticker link
 Info : Untuk Mengubah Link Sticker Pack Telegram Menjadi Sticker Whatsapp.
 
-- Sticker Whatsapp Search
-Penggunaan : Ketik [ !stickerwa patrick ] 
+-📰 Sticker Whatsapp Search
+Penggunaan : !stickerwa patrick
 Info : Untuk Mencari Mencari Sticker Whatsapp.
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝘿𝙊𝙒𝙉𝙇𝙊𝘼𝘿* [ 📩 ]
 
-- Youtube Download
-Penggunaan : Ketik [ !youtubedl link ]
+-📩 Youtube Download
+Penggunaan : !youtubedl link
 Info : Untuk Mengubah Video Dari Youtube Menjadi Vidio Atau Audio Ke Whatsapp.
 
-- Play
-Penggunaan : Ketik [ !play ]
+-📩 Play
+Penggunaan : !play 
 Info : Memutar Music Dari Youtube
 
-- Instagram Download
-Penggunaan : Ketik [ !igdl ]
+-📩 Instagram Download
+Penggunaan : !igdl 
 Info : Untuk Mengubah Video Dari Instagram Menjadi Vidio Ke Whatsapp.
 
-- Instagram Story
-Penggunaan : Ketik [ !igstory username]
+-📩 Instagram Story
+Penggunaan : !igstory
 Info : Mencari Pengguna Instagram.
 
-- Tiktok Download
-Penggunaan : Ketik [ !tiktokdl link ]
+-📩 Tiktok Download
+Penggunaan : !tiktokdl link
 Info : Mengubah Vidio Tiktok Menjadi Vidio Atau Audio Ke Whatsapp.
 
-- Mediafire Download
-Penggunaan : Ketik [ !mediafire link]
+-📩 Mediafire Download
+Penggunaan : !mediafire link
 Info : Mengubah Link Mediafire Menjadi File Ke Whatsapp.
 Role : VIP Premium
 
-- Facebook Download
-Penggunaan : Ketik [ !facebook link ]
+-📩 Facebook Download
+Penggunaan : !facebook link
 Info : Mengubah Link Facebook Menjadi Vidio Ke Whatsapp.
 
-- Nhentai Download
-Penggunaan : Ketik [ !nhdl code]
+-📩 Nhentai Download
+Penggunaan : !nhdl code
 Info : Mengubah Code Nhentai Menjadi Pdf Ke Whatsapp
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝙎𝙀𝘼𝙍𝘾𝙃* [ 🔎 ]
 
-- Playstore Search
-Penggunaan : Ketik [ !playstore Nama_Aplikasinya ]
+-🔎 Playstore Search
+Penggunaan : !playstore Nama_Aplikasinya
 Info : Mencari Aplikasi Di Playstore.
 
-- Music Youtube Search
-Penggunaan : Ketik [ !music Nama_Musicnya]
+-🔎 Music Youtube Search
+Penggunaan : !music Nama_Musicnya
 Info : Mencari Music Dan Mengubahnya Menjadi Audio.
 Role : VIP Premium
 
-- Vidio Youtube Search
-Penggunaan : Ketik [ !video judul ]
+-🔎 Vidio Youtube Search
+Penggunaan : !video judul
 Info : Mencari Vidio Dan Mengubahnya Menjadi Vidio Whatsapp.
 Role : VIP Premium
 
-- Chara Anime Search
-Penggunaan : Ketik [ !charasearch Nama_Waifumu ]
+-🔎 Chara Anime Search
+Penggunaan : !charasearch Nama_Waifumu
 Info : Mencari Image Anime Wallpaper.
 
-- Manga Search
-Penggunaan : Ketik [ !mangasearch Judul_Manga ]
+-🔎 Manga Search
+Penggunaan : !mangasearch Judul_Manga
 Info : Mencari Info Manga/Komik Jepang.
 
-- Hero Mobile Legend Search
-Penggunaan : Ketik [ !herodetail Nama_Hero ]
+-🔎 Hero Mobile Legend Search
+Penggunaan : !herodetail Nama_Hero
 Info : Mencari Data Data Dari Hero Mobile Legends.
 
-- Image Search
-Penggunaan : Ketik [ !image judul ]
+-🔎 Image Search
+Penggunaan : !image judul
 Info : Mencari Gambar Yang Kamu Cari Di Pixiv Dan Pinterest.
 
-- Google Search
-Penggunaan : Ketik [ !google query ]
+-🔎 Google Search
+Penggunaan : !google query
 Info : Mencari Data Data Yang Kamu Cari Di Google.
 
-- Youtube Search
-Penggunaan : Ketik [ !ytsearch judul ]
+-🔎 Youtube Search
+Penggunaan : !ytsearch judul
 Info : Mencari Vidio Di Youtube.
 
-- Pinterest Search
-Penggunaan : Ketik [ !pinterest Judul_Image ]
+-🔎 Pinterest Search
+Penggunaan : !pinterest Judul_Image
 Info : Mencari Image Di Pinterest.
 
-- Anime Search
-Penggunaan : Ketik [ !animesearch judul ]
+-🔎 Anime Search
+Penggunaan : !animesearch judul
 Info : Mencari Anime Yang Kamu Cari.
 
-- HandPhone Search
-Penggunaan : Ketik [ !spekhp judul ]
+-🔎 HandPhone Search
+Penggunaan : !spekhp judul 
 Info : Mencari Hand Phone Yang Kamu Cari.
 ───────────────
 
 ───────────────
 *𝑪𝑴𝑫 𝑺𝑬𝑺𝑺𝑰𝑶𝑵* [ 💎 ]
 
-- Jadi Bot
-Penggunaan : Ketik [ !jadibot ]
+-💎 Jadi Bot
+Penggunaan : !jadibot
 Info : Mengizinkan Kamu Untuk Menjadi Bot.
-Role : VIP Premium
 
--
-Penggunaan : Ketik [ !listjadibot ]
+-💎 List Jadi Bot
+Penggunaan : !listjadibot
 Info : List Yang Menjadi Bot.
-Role : VIP Premium
 
-- Stop Jadi Bot
-Penggunaan : Ketik [ !stopjadibot ]
+-💎 Stop Jadi Bot
+Penggunaan : !stopjadibot
 Info : Menghentikan Kamu Jadi Bot.
-Role : VIP Premium
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝙂𝘼𝙈𝙀* [ 🎮 ]
 
-- Tebak Gambar
-Penggunaan : Ketik [ !tebakgambar ]
+-🎮 Tebak Gambar
+Penggunaan : !tebakgambar
 Info : Bermain Tebak Gambar.
 
-- Tebak Character Anime
-Penggunaan : Ketik [ !tebakcharanime ]
+-🎮 Tebak Character Anime
+Penggunaan : !tebakcharanime
 Info : Tebak Tebakan Character Anime.
 
-- Tictactoe Game
-Penggunaan : Ketik [ !tictactoe @tag_member]
+-🎮 Tictactoe Game
+Penggunaan : !tictactoe @tag_member
 Info : Bermain Tictactoe Game Bersama Member Grup.
 
-- Slot Game
-Penggunaan : Ketik [ !slot ]
+-🎮 Slot Game
+Penggunaan : !slot
 Info : Bermain Keberuntungan.
 
-- TOD Game
-Penggunaan : Ketik [ !tod ]
+-🎮 TOD Game
+Penggunaan : !tod
 Info : Bermain Truth Or Dare.
 
-- Sambung Kata
-Penggunaan : Ketik [ !sambungkata ]
+-🎮 Sambung Kata
+Penggunaan : !sambungkata
 Info : Bermain Sambung Kata Bersama Bot.
 
-- Pertanyaan Game
-Penggunaan : Ketik [ !apakah, !kapankah, !bagaimanakah, !rate, !ganteng, !cantik, !jadian, !pacaran]
+-🎮 Pertanyaan Game
+Penggunaan : !apakah, !kapankah, !bagaimanakah, !rate, !ganteng, !cantik, !jadian, !pacaran
 Info : Memberi Pertanyaan Kepada Bot.
 
-- Dungeon Game
-Penggunaan : Ketik [ !dungeon ]
+-🎮 Dungeon Game
+Penggunaan : !dungeon
 Info : Bermain Dungeon Yang Seru Sekali.
 
-- Tebak Bendera
-Penggunaan : Ketik [ !tebakbendera ]
+-🎮 Tebak Bendera
+Penggunaan : !tebakbendera
 Info : Tebak Tebakan Bendera Negara Asing.
 
-- Siapa Aku
-Penggunaan : Ketik [ !siapaaku ]
+-🎮 Siapa Aku
+Penggunaan : !siapaaku
 Info : Tebak Tebakan Benda Dan Makhluk Yang Ada Di Dunia.
 
-- Matematika Kuis
-Penggunaan : Ketik [ !mathkuis hard]
+-🎮 Matematika Kuis
+Penggunaan : !mathkuis hard
 Info : Tebak Tebakan Matematika.
 
-- Tebak Jenaka
-Penggunaan : Ketik [ !kuis ]
+-🎮 Tebak Jenaka
+Penggunaan : !kuis
 Info : Game Lucu Lucuan.
 
-- Berburu Game
-Penggunaan : Ketik [ !berburu ]
+-🎮 Berburu Game
+Penggunaan : !berburu
 Info : Bermain Perburuan Mendapatkan Hewan.
 
-- Bercocok Tanam Game
-Penggunaan : Ketik [ !bercocoktanam ]
-Info : Bermain Membikin Anak
+-🎮 Bercocok Tanam Game
+Penggunaan : !bercocoktanam
+Info : Bermain Membikin Anak.
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝙂𝘼𝘽𝙐𝙏* [ 🏝️ ]
 
-- Profil Couple Anime
-Penggunaan : Ketik [ !ppcouple ]
+-🏝 Profil Couple Anime
+Penggunaan : !ppcouple
 info : Memberi Image Couple Anime
 
-- Asupan
-Penggunaan : Ketik [ !asupan ]
+-🏝 Asupan
+Penggunaan : !asupan
 Info : Memberi Vidio Cewe Cantik.
 
-- Meme
-Penggunaan : Ketik [ !meme ]
+-🏝 Meme
+Penggunaan : !meme
 Info : Memberi Meme Yang Lucu Dari Facebook.
 
-- Dark Joke
-Penggunaan : Ketik [ !darkjoke ]
+-🏝 Dark Joke
+Penggunaan : !darkjoke
 Info : Gambar Gambar Dark Joke Yang Bisa Membuat Kamu Ketawa.
 
-- Afk
-Penggunaan : Ketik [ !afk Alasan_Nya ]
+-🏝 Afk
+Penggunaan : !afk Alasan_Nya
 Info : Afk Dengan Memberi Kamu Penjagaan Agar Tidak Keganggu.
 
-- Quotes Anime
-Penggunaan : Ketik [ !quotesanime ]
+-🏝 Quotes Anime
+Penggunaan : !quotesanime
 Info : Memberikan Kata Kata Nasehat Dari Kartun Jepang.
 
-- Loli Video
-Penggunaan : Ketik [ !lolivid ]
+-🏝 Loli Video
+Penggunaan : !lolivid
 Info : Memberi Video Loli.
 
-- Story Anime
-Penggunaan : Ketik [ !storyanime ]
+-🏝 Story Anime
+Penggunaan : !storyanime
 Info : Memberi Vidio Vidio Story Anime Dari Instagram.
 
-- Dadu
-Penggunaan : Ketik [ !dadu ]
+-🏝 Dadu
+Penggunaan : !dadu
 Info : Mengacak Sticker Dadu.
 ───────────────
 
 ───────────────
-*𝘾𝙈𝘿 𝙃𝙀𝙉𝙏𝘼𝙄 𝙄𝙈𝘼𝙂𝙀* [ ?? ]
+*𝘾𝙈𝘿 𝙃𝙀𝙉𝙏𝘼𝙄 𝙄𝙈𝘼𝙂𝙀* [ 💦 ]
 
-- Hentai Image
-Penggunaan : Ketik [ !hentai ]
+-💦 Hentai Image
+Penggunaan : !hentai
 Info : Memberi Image Hentai.
 
-- Cum Image
-Penggunaan : Ketik [ !cum ]
+-💦 Cum Image
+Penggunaan : !cum
 Info : Memberi Image Cum.
 
-- Trap Image
-Penggunaan : Ketik [ !trap ]
+-💦 Trap Image
+Penggunaan : !trap
 Info : Memberi Image Trap.
 
-- Pussy Image
-Penggunaan : Ketik [ !pussy ]
+-💦 Pussy Image
+Penggunaan : !pussy 
 Info : Memberi Image Pussy.
 
-- Wallpaper Hentai Image
-Penggunaan : Ketik [ !wallpaperhentai ]
+-💦 Wallpaper Hentai Image
+Penggunaan : !wallpaperhentai 
 Info : Memberi Image Wallpaper +18.
 
-- Waifu Hentai Image
-Penggunaan : Ketik [ !waifu18 ]
+-💦 Waifu Hentai Image
+Penggunaan : !waifu18 
 Info : Memberi Image Waifu +18.
 
-- Fendom Image
-Penggunaan : Ketik [ !femdom ]
+-💦 Fendom Image
+Penggunaan : !femdom
 Info : Memberi Image +18.
 
-- Neko Hentai Image
-Penggunaan : Ketik [ !nekonime ]
-Info : Memberi Image +18.
+-💦 Neko Hentai Image
+Penggunaan : !nekonime 
+Info : Memberi Image Kucing +18.
 
-- Yuri Image
-Penggunaan : Ketik [ !yuri ]
+-💦 Yuri Image
+Penggunaan : !yuri
 Info : Memberi Image Yuri.
 
-- Blowjob Image
-Penggunaan : Ketik [ !blowjob ]
+-💦 Blowjob Image
+Penggunaan : !blowjob
 Info : Memberi Image Blowjob.
 
-- Ecchi Image
-Penggunaan : Ketik [ !ecchi ]
+-💦 Ecchi Image
+Penggunaan : !ecchi
 Info : Memberi Image Ecchi.
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝘼𝙐𝘿𝙄𝙊* [ 🎶 ]
 
-- Night Core Music
-Penggunaan : Ketik [ !nc ]
+-🎶 Night Core Music
+Penggunaan : !nc reply_audionya
 Info : Mengubah Music Jadi Night Core.
 
-- Tempo Music
-Penggunaan : Ketik [ !tempo angkanya ]
+-🎶 Tempo Music
+Penggunaan : !tempo reply_audionya angkanya 
 Info : Mengubah Kecepatan Music.
 
-- Loli Music
-Penggunaan : Ketik [ !imut ]
+-🎶 Loli Music
+Penggunaan : !imut reply_audionya
 Info : Mengubah Music Jadi Suara Loli
 
-- Reverse Music
-Penggunaan : Ketik [ !balikmp3 ]
+-🎶 Reverse Music
+Penggunaan : !balikmp3 reply_audionya
 Info : Membalik Music.
 
-- To Audio
-Penggunaan : Ketik [ !tomp3 ]
+-🎶 To Audio
+Penggunaan : !tomp3 reply_audionya
 Info : Mengubah Vidio Menjadi Audio.
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝙑𝙄𝘿𝙀𝙊* [ 🎥 ]
 
-- Reverse Video
-Penggunaan : Ketik [ !balikmp4 ]
+-🎥 Reverse Video
+Penggunaan : !balikmp4 reply_vidionya
 Info : Membalik Video
+Note : Minimal Durasi Vidio Hanya 10 detik.
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝙄𝙈𝘼𝙂𝙀* [ 🖼️ ]
 
 
-- Shinobu Image
-Penggunaan : Ketik [ !shinobu ]
+-🖼️ Shinobu Image
+Penggunaan : !shinobu
 Info : Memberi Image Shinobu.
 
-- Wallpaper Anime HD
-Penggunaan : Ketik [ !wallpapernime ]
+-🖼️ Wallpaper Anime HD
+Penggunaan : !wallpapernime
 Info : Memberi Image Anime Wallpaper HD.
 
-- Sagiri Image
-Penggunaan : Ketik [ !sagiri ]
+-🖼️ Sagiri Image
+Penggunaan : !sagiri
 Info : Memberi Image Sagiri.
 
-- Megumin Image
-Penggunaan : Ketik [ !megumin ]
+-🖼️ Megumin Image
+Penggunaan : !megumin
 Info : Memberi Image Megumin.
 
-- Shouta Image
-Penggunaan : Ketik [ !shota ]
+-🖼️ Shouta Image
+Penggunaan : !shota 
 Info : Memberi Image Shota.
 
-- Elf Image
-Penggunaan : Ketik [ !elf ]
+-🖼️ Elf Image
+Penggunaan : !elf 
 Info : Memberi Image Elf.
 
-- Waifu Image
-Penggunaan : Ketik [ !waifu ]
+-🖼️ Waifu Image
+Penggunaan : !waifu 
 Info : Memberi Image Waifu.
 
-- Loli
-Penggunaan : Ketik [ !loli ]
+-🖼️ Loli Image
+Penggunaan : !loli 
 Info : Memberi Image Loli.
 
-- Milf Image
-Penggunaan : Ketik [ !milf ]
+-🖼️ Milf Image
+Penggunaan : !milf
 Info : Memberi Image Milf.
 
-- Husbu Image
-Penggunaan : Ketik [ !husbu ]
+-🖼️ Husbu Image
+Penggunaan : !husbu 
 Info : Memberi Image Husbu.
 
-- Cosplay Image
-Penggunaan : Ketik [ !cosplay ]
+-🖼️ Cosplay Image
+Penggunaan : !cosplay 
 Info : Memberi Image Cosplayer.
 
-- Harta Tahta Costum 
-Penggunaan : Ketik [ !harcos query]
+-🖼️ Harta Tahta Costum 
+Penggunaan : !harcos query
 Info : Mengcustom Harta Tahta Menjadi Teks.
 
-- Harta
-Penggunaan : Ketik [ !harta query]
+-🖼️ Harta Image
+Penggunaan : !harta query
 Info : Memberi Image Teks Harta Tahta.
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝘼𝙉𝙏𝙄* [ ⚠️ ]
 
-- Antilink Grup Whatsapp
-Penggunaan : Ketik [ !antilink 1/0 ]
+-⚠️ Antilink Grup Whatsapp
+Penggunaan : !antilink 1 or 0
 Info : Mengeluarkan Member Yang Share Link Grup.
 
-- Antilink Youtube 
-Penggunaan : Ketik [ !antiyoutube 1/0 ]
+-⚠️ Antilink Youtube 
+Penggunaan : !antiyoutube 1 or 0
 Info : Mengeluarkan Member Yang Share Link Youtube.
 
-- Anti Wa.Me
-Penggunaan : Ketik [ !antiwa 1/0 ]
+-⚠️ Anti Wa.Me
+Penggunaan : !antiwa 1 or 0
 Info : Mengeluarkan Member Yang Send wa.me Di Grup.
 
-- Anti Virtex
-Penggunaan : Ketik [ !antivirtex 1/0 ]
+-⚠️ Anti Virtex
+Penggunaan : !antivirtex 1 or 0
 Info : Mengeluarkan Member Yang Send Virtex Di Grup.
 ───────────────
 
 ───────────────
-*𝘾𝙈𝘿 𝙄𝙉𝙁𝙊* [ 👁️‍🗨️ ]
+*𝘾𝙈𝘿 𝙄𝙉𝙁𝙊* [ 🗯 ]
 
-- Speed Bot
-Penggunaan : Ketik [ !speed ]
+-🗯 Speed Bot
+Penggunaan : !speed
 Info : Speed Bot Running.
 
-- Runtime Bot
-Penggunaan : Ketik [ !runtime ]
+-🗯 Runtime Bot
+Penggunaan : !runtime
 Info : Waktu Berjalannya Bot.
 
-- Owner Bot
-Penggunaan : Ketik [ !owner ]
+-🗯 Owner Bot
+Penggunaan : !owner
 Info : Owner Bot.
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝙂𝙍𝙊𝙐𝙋* [ 📢 ]
 
-- Notif Grup
-Penggunaan : Ketik [ !hidetag query ]
+-📢 Notif Grup
+Penggunaan : !hidetag query 
 Info : Meng tag Semua Member Tanpa Tag Nomer.
 
-- Kick Member
-Penggunaan : Ketik [ !hetshot ]
+-📢 Kick Member
+Penggunaan : !hetshot
 Info : Meng Kick Member Dari Grup.
 Role : Khusus Admin
 
-- Promote Member
-Penggunaan : Ketik [ !promote ]
+-📢 Promote Member
+Penggunaan : !promote
 Info : Memberi Member Kekuasaan Admin Di Grup.
 Role : Khusus Admin
 
-- Demote Admin
-Penggunaan : Ketik [ !demote ]
+-📢 Demote Admin
+Penggunaan : !demote
 Info : Mendemote Admin Yang Jarang On.
 Role : Khusus Admin
 
-- Promote All
-Penggunaan : Ketik [ !promoteall ]
-Info : Menjadikan Semua Member Menjadi Admin.
-Role : Khusus Admin
-
-- Voting
-Penggunaan : Ketik [ !votting @tag_member ]
+-📢 Voting
+Penggunaan : !votting @tag_member 
 Info : Melakukan Musyawarah.\nKetik [ vote ] Untuk Setuju\n Ketik [ devote ] Untuk Tidak Setuju
 
-- To Tag
-Penggunaan : Ketik [ !totag Reply_Image_Audio_Atau_Video ]
+-📢 To Tag
+Penggunaan : !totag Reply_Image_Audio_Atau_Video 
 Info : Meng Tag Member Melalui Audio, Image Dan Video Di Grup.
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝙎𝙄𝙈𝙋𝙇𝙀* [ 🚩 ]
 
-- !listanime
-- !listgame
-- !listnsfw
+-🚩 !listanime
+-🚩 !listgame
+-🚩 !listnsfw
 ───────────────
 
 ───────────────
 *𝘾𝙈𝘿 𝙊𝙏𝙃𝙀𝙍* [ 💬 ]
 
-- !totalall
-- !ratting
-- !source
-- !donasi
+-💬 !totalall
+-💬 !ratting
+-💬 !source
+-💬 !donasi
 ───────────────
 
 *𝗘𝗡𝗗☹︎*
@@ -4355,7 +4348,7 @@ break
   if (!isUrl(args[0]) && !args[0].includes('tiktok')) return reply('Link Error')
   ini_link = args[0]
   ayo = await getBuffer(`http://api.lolhuman.xyz/api/tiktokmusic?apikey=${setting.lolkey}&url=${ini_link}`)
-  await dha.sendMessage(from, ayo, audio, { mimetype: Mimetype.mp4Audio, filename: `${get_result.title}.mp3`, quoted: mek })
+  await dha.sendMessage(from, ayo, audio, { mimetype: Mimetype.mp4Audio, quoted: mek })
   break
     case 'google':
     if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
