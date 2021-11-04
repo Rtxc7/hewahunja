@@ -1382,13 +1382,16 @@ return reply('No Spam, Minimal 3 Detik Bro')
                }
 				break
 				case 'animesearch':
+				if (islimit(sender, isOwner, limit)) return reply(`Limit kamu sudah habis`)
                     query = args.join(" ")
                     let halu = await fetch(`https://api.jikan.moe/v3/search/anime?q=${query}`)
 			let damte = await halu.json()
 			let { title, synopsis, source, episodes, type, score, status, url, image_url } = damte.results[0]
 			dha.sendFileFromUrl(from, image_url, 'h.jpg', `*Anime found!*\n\n📝 *Title:* ${title}\n\n🎬 *Episode*: ${episodes}\n\n🔎 *Type*: ${type}\n\n🗒 *Status:* ${status? 'Ongoing' : 'Batch' }\n\n📷 *Source:* ${source}\n\n📜 *Synopsis:* ${synopsis}\n\n📎 *URL*: ${url}`)
+			limitAdd(sender, limit)
 			break
                   case "blowjob":
+            if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
@@ -1408,10 +1411,12 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
    case "fendom":
    case "fendom":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await fetchJson(`https://nekos.life/api/v2/img/femdom`)
@@ -1430,10 +1435,12 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
    case "neko":
    case "nekonime":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await fetchJson(`https://nekos.life/api/v2/img/neko`)
@@ -1452,10 +1459,12 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
    case "w18":
    case "waifu18":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await fetchJson(`https://waifu.pics/api/nsfw/waifu`)
@@ -1474,6 +1483,7 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
               case 'music': case 'musik':{
               	if (!isPremium && !isOwner) return reply("Khusus Premium!")
@@ -2823,15 +2833,17 @@ break
 case 'ada':
 E2 = `🌠`
 E1 = ['kazuma','astolfo','megumin']
+E3 = [`kazumanya`, `astolfonya`, `meguminnya`]
 BW = E1[Math.floor(Math.random() * E1.length)]
-buttons = [{buttonId:`${prefix}${BW}`,buttonText:{displayText:`${BW}`},type:1}]
+BW2 = E3[Math.floor(Math.random() * E3.length)]
+buttons = [{buttonId:`${prefix}${BW2}`,buttonText:{displayText:`${BW}`},type:1}]
               imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./lib/Nakama.jpg`),'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
               buttonsMessage = {footerText:`Selamat Kamu Menemukan Petualang Lainnya??\nYang Bernama ${BW}`, imageMessage: imageMsg,
               contentText:`*SELAMAT* ${E2}`,buttons,headerType:4}
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               dha.relayWAMessage(prep)
               break
-              case 'kazuma':
+              case 'kazumanya':
 buttons = [{buttonId:`${prefix}3`,buttonText:{displayText:`LANTAI 3`},type:1}]
               imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./lib/Kazuma.jpg`),'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
               buttonsMessage = {footerText:`Kazuma : Hai👋\nApakah Kamu Baik Baik Saja?\n${pushname} : Iya Aku Baik2 Saja\nKazuma : Syukurlah, Oh Iya Apakah Kamu Petualang Juga?\n${pushname} : Iya Nih\nKazuma : Skyukurlah, Ayo Kita Menjelajahi Dungeon Ini Bersama!\n${pushname} : O..Okey, Ayo Kita Selesaikan Dungeon Ini Bersama!\nKazuma : IKUZOO!!!!`, imageMessage: imageMsg,
@@ -2839,7 +2851,7 @@ buttons = [{buttonId:`${prefix}3`,buttonText:{displayText:`LANTAI 3`},type:1}]
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               dha.relayWAMessage(prep)
               break
-              case 'astolfo':
+              case 'astolfonya':
 buttons = [{buttonId:`${prefix}3`,buttonText:{displayText:`LANTAI 3`},type:1}]
               imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./lib/Astolfo.jpg`),'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
               buttonsMessage = {footerText:`Astolfo : Hai👋\nApakah Kamu Baik Baik Saja?\n${pushname} : Iya Aku Baik2 Saja\nAstolfo : Syukurlah, Oh Iya Nama Kamu Siapa?\n${pushname} : Na..Nama Aku ${pushname}\nAstolfo : Oalah, Salam Kenal Yah! Aku Astolfo\n${pushname} : O..Okeh, Salam Kenal\nAstolfo : Oh Iya, Apakah Kamu Menjelajahi Dungeon Ini Juga?\n${pushname} : Ah Iya, Kenapa Emangnya?\nAstolfo : Wah Beruntung Sekali, Apakah Kamu Mau Menjelajahi Dungeon Bersamaku?\n${pushname} : A... Baiklah\nAstolfo : YOSHH, AYO KITA SELESAIKAN DUNGEON INI!!\n${pushname} : Haik!!`, imageMessage: imageMsg,
@@ -2847,7 +2859,7 @@ buttons = [{buttonId:`${prefix}3`,buttonText:{displayText:`LANTAI 3`},type:1}]
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
               dha.relayWAMessage(prep)
               break
-              case 'megumin':
+              case 'meguminnya':
 buttons = [{buttonId:`${prefix}3`,buttonText:{displayText:`LANTAI 3`},type:1}]
               imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./lib/Megumin.jpg`),'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
               buttonsMessage = {footerText:`Megumin : Hai👋\nApakah Kamu Baik Baik Saja?\n${pushname} : Iya Aku Baik2 Saja\nMegumin : Syukurlah, Oh Iya Nama Kamu Siapa?\n${pushname} : Na..Nama Aku ${pushname}\nMegumin : Ohh, Salam Kenal Yah! Nama Ku Adalah Megumin Penyihir Iblis Merah Yang Sangat Kuat Bahkan Raja Iblis Pun Tunduk Kepadaku😎\n${pushname} : O..Okeh, Salam Kenal\nMegumin : Oh Iya, Apakah Kamu Mau Mencari Raja Iblis Juga?\n${pushname} : E..Engga, Aku Disini Ingin Menjelajahi Dunge--\nMegumin : Yosh, Ayo Kita Mencari Raja Iblis Bersama!!\n${pushname} : ( Ehhh Perasaan Aku Tidak Mau Mencari Raja Iblis Deh ), Yosh Ayo!\nMegumin : IKUZOO!!!\n${pushname} : Haik!!`, imageMessage: imageMsg,
@@ -5226,9 +5238,9 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
          
          case "elf":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
-   
-v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=PunyaIkyAds`)
+v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=${setting.lolkey}`)
 mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, {thumbnail: Buffer.alloc(0)})
 gbutsan = [
   {buttonId: `${prefix}${command}`, buttonText: {displayText: 'Try Again'}, type: 1}
@@ -5242,12 +5254,13 @@ imageMessage : mhan2.message.imageMessage,
     headerType: 4
 }
 await dha.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: { mentionedJid: [num]}})
+limitAdd(sender, limit)
    break
    case "sagiri":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
-   
-v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=PunyaIkyAds`)
+v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=${setting.lolkey}`)
 mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, {thumbnail: Buffer.alloc(0)})
 gbutsan = [
   {buttonId: `${prefix}${command}`, buttonText: {displayText: 'Try Again'}, type: 1}
@@ -5261,12 +5274,14 @@ imageMessage : mhan2.message.imageMessage,
     headerType: 4
 }
 await dha.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: { mentionedJid: [num]}})
+limitAdd(sender, limit)
    break
    case "megumin":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    
-v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=PunyaIkyAds`)
+v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=${setting.lolkey}`)
 mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, {thumbnail: Buffer.alloc(0)})
 gbutsan = [
   {buttonId: `${prefix}${command}`, buttonText: {displayText: 'Try Again'}, type: 1}
@@ -5285,7 +5300,7 @@ await dha.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo:
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    
-v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=PunyaIkyAds`)
+v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/${command}?apikey=${setting.lolkey}`)
 mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, {thumbnail: Buffer.alloc(0)})
 gbutsan = [
   {buttonId: `${prefix}${command}`, buttonText: {displayText: 'Try Again'}, type: 1}
@@ -5299,12 +5314,14 @@ imageMessage : mhan2.message.imageMessage,
     headerType: 4
 }
 await dha.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: { mentionedJid: [num]}})
+limitAdd(sender, limit)
    break
    case "wallpapernime":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    
-v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/wallnime?apikey=PunyaIkyAds`)
+v2 = await getBuffer(`https://api.lolhuman.xyz/api/random/wallnime?apikey=${setting.lolkey}`)
 mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, {thumbnail: Buffer.alloc(0)})
 gbutsan = [
   {buttonId: `${prefix}${command}`, buttonText: {displayText: 'Try Again'}, type: 1}
@@ -5318,9 +5335,11 @@ imageMessage : mhan2.message.imageMessage,
     headerType: 4
 }
 await dha.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {contextInfo: { mentionedJid: [num]}})
+limitAdd(sender, limit)
    break
    case "yuri":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
 if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=${setting.lolkey}`)
@@ -5338,6 +5357,7 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
    case 'video': case 'videos': case 'vidio': case 'vidios':{
    	if (!isPremium && !isOwner) return reply("Khusus Premium!")
@@ -5371,6 +5391,7 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
                 break
    case "pussy":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=pussy&apikey=hardianto`)
@@ -5388,9 +5409,11 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
    case "cum":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=${setting.lolkey}`)
@@ -5408,6 +5431,7 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
    case 'siapaaku':{
                 if (!isGroup)return reply(mess.OnlyGrup)
@@ -5421,6 +5445,7 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
             break
    case "wallpaperhentai":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random2/wallpaper?apikey=${setting.lolkey}`)
@@ -5438,9 +5463,11 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
    case "trap":
    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
+   if (islimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis\n\nNote: Limit Bisa Dibeli Dengan ${prefix}buylimit`)      
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=${setting.lolkey}`)
@@ -5458,6 +5485,7 @@ imageMessage : mhan2.message.imageMessage,
 }
 await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, MessageType.buttonsMessage, {
 			quoted: fvideo, contextInfo: { mentionedJid: [num]}})
+			limitAdd(sender, limit)
    break
    case 'bc':
 if (!isOwner) return reply(`Khusus Owner!`)     
@@ -5474,7 +5502,7 @@ reply('Suksess broadcast ')
 } else {
 for (let _ of anu) {
 creator = "6285731261728@s.whatsapp.net"
-teks =`🎯 *BROADCAST* ??`
+teks =`🎮 *BROADCAST* 🎮`
 spasi = `───────────────`
 sendButLocation(_.jid, `${teks}`, `${spasi}\n\n${bc}\n\n${spasi}`, {jpegThumbnail: miku}, [{buttonId:`${prefix}ratting`,buttonText:{displayText:'🌟RATE'},type:1}], {contextInfo: { mentionedJid: [creator,creator,creator,sender]}})
 }
