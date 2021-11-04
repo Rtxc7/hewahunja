@@ -1510,7 +1510,7 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
  //*********************(( JADI BOT ))*************\\
  case 'jadibot':
 if(itsMe) return reply('Tidak bisa jadibot di dalam bot')
-if (isGroup) return reply(`*Fitur Hanya dapat digunakan dalam Private Chat! => wa.me/${botN}?text=${prefix}jadibot*`)
+if (isGroup) return reply(`*Fitur Hanya dapat digunakan dalam Private Chat! => wa.me/${botNumber}?text=${prefix}jadibot*`)
 jadibot(reply,dha,from, mek)
 break
     
