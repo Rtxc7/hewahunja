@@ -1716,9 +1716,9 @@ jsonData = JSON.parse(ppcp);
 randIndex = Math.floor(Math.random() * jsonData.length);
 randKey = jsonData[randIndex];
 Laki = await getBuffer(randKey.male)
-dha.sendMessage(from, Laki, image,  { caption: `${kont}`, quoted: mek, thumbnail: miku, contextInfo: { mentionedJid: [num]}})
+dha.sendMessage(from, Laki, image,  { caption: `${kont}`, quoted: mek, thumbnail: Buffer.alloc(0), contextInfo: { mentionedJid: [num]}})
 Cewe = await getBuffer(randKey.female)
-dha.sendMessage(from, Cewe, image, { caption: `${kint}`, quoted: mek, thumbnail: miku, contextInfo: { mentionedJid: [num]}})
+dha.sendMessage(from, Cewe, image, { caption: `${kint}`, quoted: mek, thumbnail: Buffer.alloc(0), contextInfo: { mentionedJid: [num]}})
 break
         case 'owner':
                sendKontak(from, `${owner}`, `${ownerName}`, 'Sibukk!!')
@@ -2961,7 +2961,7 @@ break
 					const trut =['Pernah suka sama siapa aja? berapa lama?','Kalau boleh atau kalau mau, di gc/luar gc siapa yang akan kamu jadikan sahabat?(boleh beda/sma jenis)','apa ketakutan terbesar kamu?','pernah suka sama orang dan merasa orang itu suka sama kamu juga?','Siapa nama mantan pacar teman mu yang pernah kamu sukai diam diam?','pernah gak nyuri uang nyokap atau bokap? Alesanya?','hal yang bikin seneng pas lu lagi sedih apa','pernah cinta bertepuk sebelah tangan? kalo pernah sama siapa? rasanya gimana brou?','pernah jadi selingkuhan orang?','hal yang paling ditakutin','siapa orang yang paling berpengaruh kepada kehidupanmu','hal membanggakan apa yang kamu dapatkan di tahun ini','siapa orang yang bisa membuatmu sange','siapa orang yang pernah buatmu sange','(bgi yg muslim) pernah ga solat seharian?','Siapa yang paling mendekati tipe pasangan idealmu di sini','suka mabar(main bareng)sama siapa?','pernah nolak orang? alasannya kenapa?','Sebutkan kejadian yang bikin kamu sakit hati yang masih di inget','pencapaian yang udah didapet apa aja ditahun ini?','kebiasaan terburuk lo pas di sekolah apa?']
 					const ttrth = trut[Math.floor(Math.random() * trut.length)]
 					truteh = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-					dha.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek, thumbnail: miku })
+					dha.sendMessage(from, truteh, image, { caption: '*Truth*\n\n'+ ttrth, quoted: mek, thumbnail: Buffer.alloc(0) })
 					break
 					case 'bisakah':
 					if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
@@ -3245,7 +3245,7 @@ pp_riu = await getBuffer(pp_user)
 					const dare =['Kirim pesan ke mantan kamu dan bilang "aku masih suka sama kamu','telfon crush/pacar sekarang dan ss ke pemain','pap ke salah satu anggota grup','Bilang "KAMU CANTIK BANGET NGGAK BOHONG" ke cowo','ss recent call whatsapp','drop emot "🦄💨" setiap ngetik di gc/pc selama 1 hari','kirim voice note bilang can i call u baby?','drop kutipan lagu/quote, terus tag member yang cocok buat kutipan itu','pake foto sule sampe 3 hari','ketik pake bahasa daerah 24 jam','ganti nama menjadi "gue anak lucinta luna" selama 5 jam','chat ke kontak wa urutan sesuai %batre kamu, terus bilang ke dia "i lucky to hv you','prank chat mantan dan bilang " i love u, pgn balikan','record voice baca surah al-kautsar','bilang "i hv crush on you, mau jadi pacarku gak?" ke lawan jenis yang terakhir bgt kamu chat (serah di wa/tele), tunggu dia bales, kalo udah ss drop ke sini','sebutkan tipe pacar mu!','snap/post foto pacar/crush','teriak gajelas lalu kirim pake vn kesini','pap mukamu lalu kirim ke salah satu temanmu','kirim fotomu dengan caption, aku anak pungut','teriak pake kata kasar sambil vn trus kirim kesini','teriak " anjimm gabutt anjimmm " di depan rumah mu','ganti nama jadi " BOWO " selama 24 jam','Pura pura kerasukan, contoh : kerasukan maung, kerasukan belalang, kerasukan kulkas, dll']
 					const der = dare[Math.floor(Math.random() * dare.length)]
 					tod = await getBuffer(`https://i.ibb.co/305yt26/bf84f20635dedd5dde31e7e5b6983ae9.jpg`)
-					dha.sendMessage(from, tod, image, { quoted: mek, thumbnail: miku, caption: '*Dare*\n\n'+ der })
+					dha.sendMessage(from, tod, image, { quoted: mek, thumbnail: Buffer.alloc(0), caption: '*Dare*\n\n'+ der })
 					break
 					case 'cantik':
 					if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
@@ -3904,7 +3904,7 @@ break
               res = await axios.get(`https://api.lolhuman.xyz/api/instagram2?apikey=${setting.lolkey}&url=${args[0]}`)
               const data = res.data.result
               for (let i = 0; i < data.media.length; i++) {
-              sendMediaURL(from, data.media[i], data.caption, {thumbnail: miku})
+              sendMediaURL(from, data.media[i], data.caption, {thumbnail: Buffer.alloc(0)})
 }
               } catch (e) {
               console.log(e)
@@ -3948,7 +3948,7 @@ break
               else {
               gugIm = result
               random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-              sendFileFromUrl(random, image, {quoted: fvn, thumbnail: miku, caption: `*Hasil Pencarian Dari :* ${teks}`})
+              sendFileFromUrl(random, image, {quoted: fvn, thumbnail: Buffer.alloc(0), caption: `*Hasil Pencarian Dari :* ${teks}`})
 }
 }
              break
@@ -4235,7 +4235,7 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
 *Durasi* : \`\`\`\${res[0].size}\`\`\``
               buttons = [{buttonId: `${prefix}buttons2 ${q}`,buttonText:{displayText: `Videonya\n\n~RiuNiiSan`},type:1},{buttonId:`${prefix}buttons1 ${q}`,buttonText:{displayText:'Audionya\n\n~RiuNiiSan'},type:1}]
               fs.writeFileSync(`./ytmp.jpeg`, await getBuffer(res[0].thumb))
-              imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./ytmp.jpeg`), 'imageMessage', {thumbnail: miku})).message.imageMessage
+              imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./ytmp.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
               buttonsMessage = {footerText:'Pilih salah satu di bawah ini', imageMessage: imageMsg,
               contentText:`${result}`,buttons,headerType:4}
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek})
@@ -4450,7 +4450,7 @@ _*Tunggu Proses Upload Media......*_`
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterest?apikey=${setting.lolkey}&query=Manhua`)
                     ini_url = ini_url.result
                     ini_buffer = await getBuffer(ini_url)
-                    await dha.sendMessage(from, ini_buffer, image, { quoted: mek, thumbnail: miku })
+                    await dha.sendMessage(from, ini_buffer, image, { quoted: mek, thumbnail: Buffer.alloc(0) })
                     break
                     case 'pilihan3':
             if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
@@ -4464,21 +4464,21 @@ _*Tunggu Proses Upload Media......*_`
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterest?apikey=${setting.lolkey}&query=L Lawliet`)
                     ini_url = ini_url.result
                     ini_buffer = await getBuffer(ini_url)
-                    await dha.sendMessage(from, ini_buffer, image, { quoted: mek, thumbnail: miku})
+                    await dha.sendMessage(from, ini_buffer, image, { quoted: mek, thumbnail: Buffer.alloc(0)})
                     break
                     case 'pilihan5':
             if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterest?apikey=${setting.lolkey}&query=Light Yagami`)
                     ini_url = ini_url.result
                     ini_buffer = await getBuffer(ini_url)
-                    await dha.sendMessage(from, ini_buffer, image, { quoted: mek, thumbnail: miku })
+                    await dha.sendMessage(from, ini_buffer, image, { quoted: mek, thumbnail: Buffer.alloc(0) })
                     break
                     case 'pilihan6':
             if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
                     ini_url = await fetchJson(`https://api.lolhuman.xyz/api/pinterest?apikey=${setting.lolkey}&query=Aqua Konosuba`)
                     ini_url = ini_url.result
                     ini_buffer = await getBuffer(ini_url)
-                    await dha.sendMessage(from, ini_buffer, image, { quoted: mek, thumbnail: miku })
+                    await dha.sendMessage(from, ini_buffer, image, { quoted: mek, thumbnail: Buffer.alloc(0) })
                     break
             case 'stickerwa':
             if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
@@ -4532,7 +4532,7 @@ if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* unt
               let wipi = wipu[Math.floor(Math.random() * (wipu.length))]
               fs.writeFileSync(`./${sender}.jpeg`, await getBuffer(wipi))
 		      buttons = [{buttonId: `${prefix + command}`,buttonText:{displayText: `Try Again`},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'Home'},type:1}]
-              imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: miku})).message.imageMessage
+              imageMsg = ( await dha.prepareMessage(from, fs.readFileSync(`./${sender}.jpeg`), 'imageMessage', {thumbnail: Buffer.alloc(0)})).message.imageMessage
               buttonsMessage = {footerText:`Hai Kak *@${num.split('@')[0]}*\nSaya Ryuu Bot Yang Akan Membantu/Mempermudah Kakak Untuk Membuat Sticker Dan Lain Lain, Mau Cari Tau Tentangku? Chat Owner Yah!`, imageMessage: imageMsg,
               contentText:`klik Try Again untuk ke gambar selanjut nya!`,buttons,headerType:4}
               prep = await dha.prepareMessageFromContent(from,{buttonsMessage},{quoted: mek, contextInfo: { mentionedJid: [num]}})
@@ -4747,7 +4747,7 @@ Channel : ${i.author.name}
 Link : ${i.url}\n`
 }
                b = a.trim()
-               sendFileFromUrl(res.all[0].image, image, {quoted: mek, thumbnail: miku, caption: b})
+               sendFileFromUrl(res.all[0].image, image, {quoted: mek, thumbnail: Buffer.alloc(0), caption: b})
                } catch (e) {
                console.log(e)
                reply(`${e}`)
@@ -5073,7 +5073,7 @@ ini_txt += `Warna : ${spek.misc.colours}\n`
 ini_txt += `Model : ${spek.misc.models}\n`
 ini_txt += `Harga : ${spek.misc.price}\n`
 thamnel = await getBuffer(get_result.phone_image)
-await dha.sendMessage(from, thamnel, image, { quoted: mek, caption: ini_txt, thumbnail: miku})
+await dha.sendMessage(from, thamnel, image, { quoted: mek, caption: ini_txt, thumbnail: Buffer.alloc(0)})
 break;
                case 'teks1':
               textnya = `
@@ -5159,7 +5159,7 @@ buttons = [{buttonId:`${prefix}menu`,buttonText:{displayText:'MENU'},type:1}]
              num = `${sender.split("@")[0]}@s.whatsapp.net`
              
 v2 = await getBuffer(`https://api.lolhuman.xyz/api/meme/memeindo?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(from, v2, image)
+mhan2 = await dha.prepareMessage(from, v2, image, { thumbnail: Buffer.alloc(0) })
 gbutsan = [
   {buttonId: `${prefix}meme`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
@@ -5202,7 +5202,7 @@ await dha.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    
 v2 = await getBuffer(`https://api.lolhuman.xyz/api/meme/darkjoke?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(from, v2, image, { thumbnail: buffer.alloc[0]})
+mhan2 = await dha.prepareMessage(from, v2, image, { thumbnail: Buffer.alloc(0)})
 gbutsan = [
   {buttonId: `${prefix}darkjoke`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
@@ -5224,7 +5224,7 @@ await dha.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: miku })
+mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: Buffer.alloc(0) })
 gbutsan = [
   {buttonId: `${prefix}hentai`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
@@ -5350,7 +5350,7 @@ limitAdd(sender, limit)
    num = `${sender.split("@")[0]}@s.whatsapp.net`
 if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: miku })
+mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: Buffer.alloc(0) })
 gbutsan = [
   {buttonId: `${prefix}yuri`, buttonText: {displayText: 'Try Again'}, type: 1}
 ]
@@ -5402,7 +5402,7 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=pussy&apikey=hardianto`)
-mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: miku })
+mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: Buffer.alloc(0) })
 gbutsan = [
   {buttonId: `${prefix}pussy`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
@@ -5424,7 +5424,7 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: miku })
+mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: Buffer.alloc(0) })
 gbutsan = [
   {buttonId: `${prefix}cum`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
@@ -5456,7 +5456,7 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random2/wallpaper?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: miku })
+mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: Buffer.alloc(0) })
 gbutsan = [
   {buttonId: `${prefix}wallpaper`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
@@ -5478,7 +5478,7 @@ await dha.sendMessage(`${sender.split("@")[0]}@s.whatsapp.net`, gbuttonan, Messa
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    if (isGroup) return reply(`Karna Ini Fitur Hentai, Mohon Maaf Gambarnya Hanya Bisa Lewat Chat Pribadi!`)
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: miku })
+mhan2 = await dha.prepareMessage(`${sender.split("@")[0]}@s.whatsapp.net`, v2, image, { thumbnail: Buffer.alloc(0)  })
 gbutsan = [
   {buttonId: `${prefix}trap`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
@@ -5553,7 +5553,7 @@ break
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    
 v2 = await getBuffer(`http://api.lolhuman.xyz/api/random/nsfw/${command}?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(from, v2, image, { thumbnail: miku })
+mhan2 = await dha.prepareMessage(from, v2, image, { thumbnail: Buffer.alloc(0) })
 gbutsan = [
   {buttonId: `${prefix}ecchi`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
