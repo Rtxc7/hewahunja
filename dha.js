@@ -3775,14 +3775,14 @@ break
               break
 //------------------< Public/Self >-------------------
         case 'public':            
-          	if (!mek.key.fromMe) return 
+          	if (!mek.key.fromMe && !isOwner) return 
           	if (banChats === false) return 
           	banChats = false
              await dha.setStatus(`Bot For WhatsApp | | Status : Online`)
           	fakegroup(`「 *PUBLIC-MODE* 」`)
           	break
 	case 'self':
-          	if (!mek.key.fromMe) return 
+          	if (!mek.key.fromMe && !isOwner) return 
           	if (banChats === true) return
           	uptime = process.uptime()
           	banChats = true
