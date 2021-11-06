@@ -85,7 +85,7 @@ let tebakbendera = []
 let {    
     gamewaktu,
     limitCount
-} = require('./database/settings')
+} = require('./setting.json')
 
 fake = 'RIU OWNER'
 cr = '@Riu'
@@ -5202,7 +5202,7 @@ await dha.sendMessage(from, gbuttonan, MessageType.buttonsMessage, {
    num = `${sender.split("@")[0]}@s.whatsapp.net`
    
 v2 = await getBuffer(`https://api.lolhuman.xyz/api/meme/darkjoke?apikey=${setting.lolkey}`)
-mhan2 = await dha.prepareMessage(from, v2, image)
+mhan2 = await dha.prepareMessage(from, v2, image, { thumbnail: buffer.alloc[0]})
 gbutsan = [
   {buttonId: `${prefix}darkjoke`, buttonText: {displayText: '💎NEXT'}, type: 1}
 ]
