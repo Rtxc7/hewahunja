@@ -1895,15 +1895,13 @@ randIndex = Math.floor(Math.random() * jsonData.length);
 randKey = jsonData[randIndex];
 let gambarnya = await getBuffer(randKey.foto)
       menunya =
-`Hallo kak 👋\n*@${num.split('@')[0]}*\n
+`
+------ *User Info* -------
 
-_*WhatsApp BOT*_
-
-Your Name : *${pushname}*
-
-Your Bio : *${p3}*
-
-Your Api : wa.me/${sender.split("@")[0]}
+≽ *Name* : *${pushname}*
+≽ *Status* : *${isOwner ? 'Owner👑' : isPremium ? 'Premium💎' : 'Gratisan✨'}*
+≽ *Bio WA* : *${p3}*
+≽ *Number* : wa.me/${sender.split("@")[0]}
 
 
 ───────────────
