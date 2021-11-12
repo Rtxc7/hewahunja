@@ -1673,24 +1673,16 @@ break
                         })
                  }
                     break
-case 'charaingfo': {
+case 'charaingfo': case 'charasearch'{
 				if (isLimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis`)
                     query = args.join(" ")
                     let halu = await fetch(`https://api.jikan.moe/v3/search/character?q=${query}`)
 			let damte = await halu.json()
-			let { name, alternative_names, url, image_url, type } = damte.results[0]
-			dha.sendFileFromUrl(from, image_url, 'c.jpg', `*Chara found!*\n\n✨ *Name:* ${name}\n\n *AL Name*: ${alternative_names}\n\n🔎 *Chara Type*: ${type}\n\n📎 *URL*: ${url}`)
+			let { mal_id, name, alternative_names, url, image_url, type } = damte.results[0]
+			dha.sendFileFromUrl(from, image_url, 'c.jpg', `*Chara found!*\n\n✨ *Name:* ${name}\n\n *👤 AL Name*: ${alternative_names}`}\n\n👑 *Mall ID*: ${mal_id}\n\n📎 *URL*: ${url}`)
 			limitAdd(sender, limit)
 			}
 			break
-                    case 'charasearch':
-    if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
-            if(!q) return reply(`gambar apa?\nContoh : ${prefix}chara nino`)
-            let im = await hx.chara(q)
-            let acak = im[Math.floor(Math.random() * im.length)]
-            let li = await getBuffer(acak)
-            await dha.sendMessage(from,li,image,{quoted: mek})
-            break
                     case 'mangasearch': {
                     query = args.join(" ")
                     let ress = await fetch(`https://api.jikan.moe/v3/search/manga?q=${query}`)
@@ -2005,8 +1997,8 @@ Info : Mencari Vidio Dan Mengubahnya Menjadi Vidio Whatsapp.
 Role : VIP Premium
 
 -🔎 Chara Anime Search
-Penggunaan : !charaingfo Megumin
-Info : Mencari Image Anim.
+Penggunaan : !charasearch Megumin
+Info : Mencari Image Anime.
 
 -🔎 Manga Search
 Penggunaan : !mangasearch Judul_Manga
