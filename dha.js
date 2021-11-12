@@ -1673,7 +1673,7 @@ break
                         })
                  }
                     break
-case 'charaingfo': case 'charasearch'{
+case 'charaingfo': case 'charasearch':{
 				if (isLimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis`)
                     query = args.join(" ")
                     let halu = await fetch(`https://api.jikan.moe/v3/search/character?q=${query}`)
