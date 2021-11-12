@@ -1673,6 +1673,16 @@ break
                         })
                  }
                     break
+case 'charaingfo': {
+				if (isLimit(sender, isOwner, limitCount, limit)) return reply(`Limit kamu sudah habis`)
+                    query = args.join(" ")
+                    let halu = await fetch(`https://api.jikan.moe/v3/search/character?q=${query}`)
+			let damte = await halu.json()
+			let { name, alternative_names, url, image_url, type } = damte.results[0]
+			dha.sendFileFromUrl(from, image_url, 'c.jpg', `*Chara found!*\n\n✨ *Name:* ${name}\n\n *AL Name*: ${alternative_names}\n\n🔎 *Chara Type*: ${type}\n\n📎 *URL*: ${url}`)
+			limitAdd(sender, limit)
+			}
+			break
                     case 'charasearch':
     if (!isRegister) return reply("Kamu Belom Terdaftar Kak!\nketik *!daftarnya* untuk mendaftar")
             if(!q) return reply(`gambar apa?\nContoh : ${prefix}chara nino`)
@@ -1995,8 +2005,8 @@ Info : Mencari Vidio Dan Mengubahnya Menjadi Vidio Whatsapp.
 Role : VIP Premium
 
 -🔎 Chara Anime Search
-Penggunaan : !charasearch Nama_Waifumu
-Info : Mencari Image Anime Wallpaper.
+Penggunaan : !charaingfo Megumin
+Info : Mencari Image Anim.
 
 -🔎 Manga Search
 Penggunaan : !mangasearch Judul_Manga
